@@ -1,0 +1,231 @@
+html, body{
+	margin:0px;
+	padding:0px;
+	border:0;
+	width:100%;
+	overflow: hidden
+}
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    text-transform:uppercase;
+    width:100%;
+    overflow: hidden;
+    background: #f7f8fb;
+}
+
+#cabecera{
+	width:100%;
+	background-size: auto 100%;
+    background: #1491be;
+    height:45px;
+    line-height:50px;
+    text-align:center
+}
+
+#wrapper {
+	position:absolute; z-index:1;
+	top:45px; bottom:0px; left:0;
+	width:100%;
+}
+
+#scroller {
+	position:absolute; z-index:1;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	width:100%;
+	padding:0;
+}
+
+.contenedorBoton .contenedorBlanco{
+	margin:2px;
+	background: #fff;
+}
+
+.contenedorBoton .contenedorBlanco .icono{
+	background-size:cover;
+}
+
+.icono{
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+
+/* ADAPTACIÓN DE LAS FOTOS EN MINIATURAS */
+.contenedorBoton{
+	float:left;
+	width:10%;
+	margin:0;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	.contenedorBoton{
+		width:12.5% !important;
+	}
+}
+
+/* Note: Design for a width of 320px */
+
+@media only screen and (max-width: 767px) {
+	.contenedorBoton{
+		width:25% !important;
+	}
+}
+
+/* Note: Design for a width of 480px */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {	
+	.contenedorBoton{
+		width:16.666% !important;
+	}
+}
+/*--------------------------------------------*/
+
+/*ZOOM DE LA IMAGEN SELECCIONADA*/
+.md-modal {
+	background: rgba(0,0,0,0.8);
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom:0;
+	width: 100%;
+	height: auto;
+	z-index: 9999999999999999999;
+	text-align:center;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.md-hide {
+	visibility: hidden;
+}
+
+#zoom {
+	float:left;
+	position:relative;	/* On older OS versions "position" and "z-index" must be defined, */
+	z-index:1;			/* it seems that recent webkit is less picky and works anyway. */
+	overflow:hidden;
+	top:0;
+	bottom:0;
+	height:100%;
+	background-position:center;
+	background-size:contain !important;
+}
+
+#close{
+	font-size:14px;
+	width:28px; 
+	height:28px;
+	border: solid #ccc 1px;
+	color: #FFF;
+	background: #000;
+	-webkit-border-radius: 14px;
+	float:right;
+	right:5px;
+	top:5px;
+	position:absolute;
+	z-index: 9999999999999999999;
+}
+
+/*CAPA FLOTANTE DONDE APARECE GIF CARGANDO*/
+#cargando{
+	position:absolute; 
+	top:45px; 
+	left:0px; 
+	width:100%;
+	bottom:0px;
+	z-index:9999
+}
+
+#floatingBarsG{
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+	width:24px;
+	height:30px;
+	margin-top:20px
+}
+
+.blockG{
+	position:absolute;
+	background-color:#FFFFFF;
+	width:4px;
+	height:9px;
+	-webkit-border-radius:4px 4px 0 0;
+	-webkit-transform:scale(0.4);
+	-webkit-animation-name:fadeG;
+	-webkit-animation-duration:1.04s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-direction:linear;
+}
+
+#rotateG_01{
+	left:0;
+	top:11px;
+	-webkit-animation-delay:0.39s;
+	-webkit-transform:rotate(-90deg);
+}
+
+#rotateG_02{
+	left:3px;
+	top:4px;
+	-webkit-animation-delay:0.52s;
+	-webkit-transform:rotate(-45deg);
+}
+
+#rotateG_03{
+	left:10px;
+	top:1px;
+	-webkit-animation-delay:0.65s;
+	-webkit-transform:rotate(0deg);
+}
+
+#rotateG_04{
+	right:3px;
+	top:4px;
+	-webkit-animation-delay:0.78s;
+	-webkit-transform:rotate(45deg);
+}
+
+#rotateG_05{
+	right:0;
+	top:11px;
+	-webkit-animation-delay:0.9099999999999999s;
+	-webkit-transform:rotate(90deg);
+}
+
+#rotateG_06{
+	right:3px;
+	bottom:3px;
+	-webkit-animation-delay:1.04s;
+	-webkit-transform:rotate(135deg);
+}
+
+#rotateG_07{
+	bottom:0;
+	left:10px;
+	-webkit-animation-delay:1.1700000000000002s;
+	-webkit-transform:rotate(180deg);
+}
+
+#rotateG_08{
+	left:3px;
+	bottom:3px;
+	-webkit-animation-delay:1.3s;
+	-webkit-transform:rotate(-135deg);
+}
+
+@-webkit-keyframes fadeG{
+	0%{ background-color:#1693bf }
+	100%{ background-color:#FFFFFF }
+}
+/*-------------------------------------------------------*/
